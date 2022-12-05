@@ -1,6 +1,7 @@
 class BooksController < ApplicationController
   def index
     @new = Book.new
+    @index = Book.all
   end
 
   def destroy

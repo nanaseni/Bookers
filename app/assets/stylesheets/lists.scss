@@ -1,8 +1,26 @@
 // Place all the styles related to the lists controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
+
+th{
+  padding-bottom: 5px;
+}
+
+.field,.actions{
+  margin-bottom: 10px;
+}
+
+h2{
+  margin: 16.185px 0;
+}
+
+input{
+  padding: 1px 2px;
+}
+.actions input{
+  padding: 1px 6px;
+}
+
+textarea{
+  padding: 2px;
 }
