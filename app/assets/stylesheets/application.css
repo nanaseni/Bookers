@@ -14,11 +14,7 @@
  *= require_self
  */
 
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
+
  body{
   color:#333;
   font-family: verdana, arial, helvetica, sans-serif;
@@ -27,22 +23,69 @@
   margin: 33px;
 }
 
+/*topページ pとかぶっている？*/
+.top{
+  margin:33px;
+}
 
-td{
-  padding: 0 5px 7px;
+/*topページとindexページ*/
+td,p{
   font-size:13px;
   line-height: 18px;
   margin:33px;
 }
 
+/*indexページ*/
+td{
+  padding: 0 5px 7px;
+}
 
-/*index,newbook*/
+th{
+  padding-bottom: 5px;
+}
+
+
+.field,.actions{
+  margin-bottom: 10px;
+}
+
+.errors{
+  padding:2px;
+  background-color: red;
+  display: table;
+}
+
+#error_explain{
+  width:450px;
+  border:2px solid red;
+  padding: 7px;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+
+#error_explain h2{
+  text-align: left;
+  font-weight: 700;
+  font-size: 12px;
+   color: white;
+  padding:5px 5px 5px 15px;
+  margin: -7px;
+  margin-bottom: 0;
+  background-color: red;
+}
+
+/*index,newbook lbelからdivにした*/
 label{
-  display: block;
+  display:block;
 }
 
 a{
   color:#000;
+}
+
+/*疑似クラス　訪問済みリンク　back edit*/
+a:visited{
+  color:#666;
 }
 
 a:hover{

@@ -1,2 +1,19 @@
-<h1>Lists#show</h1>
-<p>Find me in app/views/lists/show.html.erb</p>
+<div class="flash-message">
+  <% flash.each do |key,value| %>
+   <%= content_tag(:div,value, class: key) %>
+  <% end %>
+</div>
+
+<p>
+  <strong>Title:</strong>
+  <%= @show.title %>
+</p>
+
+<p>
+  <strong>Body:</strong>
+  <%= @show.body %>
+</p>
+
+<%= link_to "edit", books_edit_path %>
+|
+<%= link_to "back",books_path %>

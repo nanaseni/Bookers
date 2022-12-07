@@ -1,2 +1,58 @@
-<h1>Lists#edit</h1>
-<p>Find me in app/views/lists/edit.html.erb</p>
+<h1>Editing Book</h1>
+
+<% if @edit.errors.any? %>
+     <div id= "error_explain">
+       <h2>
+       <%= @edit.errors.count %>errors prohibites this book from being saved:
+       </h2>
+       <ul>
+        <% @edit.errors.full_messages.each do |message| %>
+        　<li><%= message %></li>
+        <% end %>
+       </ul>
+     </div>
+     <%= form_with model: @edit,url: books_show_path(@edit.id),method: :patch do |f| %>
+      <div class="field">
+          <div class="errors">
+             <label>Title</label>
+          </div>
+          <div class="errors">
+             <%= f.text_field:title %>
+          </div>
+      </div>
+      <div class="field">
+          <div class="errors">
+              <label>Body</label>
+          </div>
+          <div class="errors"> 
+               <%= f.text_area:body %>
+          </div>
+      </div>
+
+       <div class="actions"><%= f.submit 'Update Book'%></div>
+     <% end %>
+      <%= link_to 'show', books_show_path %>
+      |
+      <%= link_to 'back', books_path %>
+
+
+<% else %>
+  <%= form_with model: @edit, url: books_update_path(@edit.id), method: :patch do |f| %>
+   <div class="field">
+    <label>Title</label>
+     <%= f.text_field:title %>
+   </div>
+   <div class="field">
+    <label>Body</label>
+     <%= f.text_area:body %>
+   </div> 
+   <div class="actions">
+     <%= f.submit 'Update Book' %>
+   </div>
+  <% end %>
+
+  <%= link_to 'show', books_show_path %>
+   |
+  <%= link_to 'back', books_path %>
+
+<% end %>
